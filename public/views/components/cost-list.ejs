@@ -1,0 +1,15 @@
+<ul class="list-group w-25">
+    <% if (expenses && expenses.length > 0) { %>
+        <% expenses.forEach(expense => { %>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <strong><%= expense.description %></strong>
+                    <span class="text-muted">(<%= expense.date %>)</span>
+                </div>
+                <span class="badge bg-danger rounded-pill">$<%= expense.amount.toFixed(2) %></span>
+            </li>
+        <% }); %>
+    <% } else { %>
+        <li class="list-group-item">No expenses found.</li>
+    <% } %>
+</ul>
